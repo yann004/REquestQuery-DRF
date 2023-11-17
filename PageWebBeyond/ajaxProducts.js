@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fonction pour afficher les données sur la page
     function displayData(data) {
         var container = document.getElementById('data-container');
-        container.innerHTML = '';  // Effacer le contenu précédent, au cas où
+        container.innerHTML = '';  
 
         // Parcourir les données et les ajouter au conteneur
         data.forEach(item => {
-            container.innerHTML += `<p>${item.name}: ${item.price}</p>`;
-            // Assurez-vous de remplacer "name" et "price" par les noms réels de vos champs
+            container.innerHTML += `<p>${item.category}: ${item.description}</p> ${item.name}: ${item.price}$</p>`;
+            
         });
     }
 });

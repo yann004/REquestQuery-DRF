@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Parcourir les données et les ajouter au conteneur
         data.forEach(item => {
-            container.innerHTML += `<p>${item.created_at}</p>' '<p>${item.total_amount}</p>`;
+            container.innerHTML += `<p>${item.created_at}</p><p>${item.total_amount}$</p>`;
             // Assurez-vous de remplacer "name" et "price" par les noms réels de vos champs
         });
     }

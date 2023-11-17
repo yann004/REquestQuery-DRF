@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     // Récupérer les données depuis votre API Django
-    fetch('http://127.0.0.1:8000/beyondShop/categories/3/')
+    fetch('http://127.0.0.1:8000/beyondShop/categories/')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erreur de récupération des données');
@@ -19,18 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fonction pour afficher les données sur la page
     function displayData(data) {
-        var container = document.getElementById('data-container');
+        var container = document.getElementById('data-container1');
         container.innerHTML = '';  // Effacer le contenu précédent, au cas où
-    
-        if (Array.isArray(data)) {
-            // Si data est un tableau, affichez chaque élément
-            data.forEach(item => {
-                container.innerHTML += `<p>${item.name}</p>`;
-                
-            });
-        } else {
-            // Si data n'est pas un tableau, affichez directement les propriétés
-            container.innerHTML += `<p>${data.name}</p>`;
-            
-        }
-    }});
+
+        // Parcourir les données et les ajouter au conteneur
+        data.forEach(item => {
+            container.innerHTML += `<p>${item.name} </p>`;
+            // Assurez-vous de remplacer "name" et "price" par les noms réels de vos champs
+        });
+    }
+});

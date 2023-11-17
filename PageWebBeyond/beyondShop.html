@@ -1,26 +1,116 @@
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Affichant les Données JSON</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Image Carousel avec Bootstrap</title>
+    <!-- Inclure les fichiers CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Inclure Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Ajouter du style personnalisé si nécessaire -->
+    <style>
+        /* Ajouter des styles personnalisés ici si nécessaire */
+        .details-container {
+            display:-moz-box;
+        }
+        /* Hauteur fixe pour les images */
+        .carousel-item img {
+        height: 200px; /* Ajustez la hauteur selon vos besoins */
+        object-fit: cover; /* Assurez-vous que l'image couvre la zone spécifiée */
+    }
+    </style>
 </head>
 <body>
-    <div id="data-container">
-        <!-- Les données seront affichées ici -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdgqQ25gdXywNj7tNvoMTFAtDtnzl5XnZnJqbfO8IgOxa8xM52700QQtBD1vYARQIALC4&usqp=CAU" alt="Logo" style="height: 100px; width: auto;">
+        <h2 class="text-center mb-0">BEYOND SHOP</h2>
     </div>
-    <div id="data-container1">
-        <!-- Les données seront affichées ici -->
+    <!-- Carrousel Bootstrap -->
+    <div id="imageCarousel" class="carousel slide mb-4" data-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Image 1 -->
+            <div class="carousel-item active">
+                <img src="https://media.istockphoto.com/id/1196087614/fr/vectoriel/illustration-de-vecteur-des-baskets-chaussures-de-sport-dans-un-style-de-ligne-conception.webp?s=1024x1024&w=is&k=20&c=ycmMYX0zw5fiwPcFqIsniYe_H9qIwVRXcnPTP_NMZmA=" class="d-block w-100" alt="Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/920626840/fr/vectoriel/illustration-de-t-shirts.webp?s=1024x1024&w=is&k=20&c=_CD0TSD24Tq6UvUWw3iezlZzXoWTooOCc_v0UQXdAc8=" class="d-block w-100" alt="Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/516444115/fr/vectoriel/noir-short-de-sport-pour-hommes.webp?s=1024x1024&w=is&k=20&c=yuxub8HKyawwpPQbZms0vh74ueeNDnJLiPfwp_fpwM8=" class="d-block w-100" alt="Image 3">
+            </div>
+            <!-- Ajouter d'autres images au besoin -->
+        </div>
+
+        <!-- Contrôles du carrousel -->
+        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
     </div>
-    <div id="data-container2">
-        <!-- Les données seront affichées ici -->
+
+    <!-- Boutons cliquables avec icônes et informations détaillées -->
+
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-secondary" data-toggle="collapse" data-target="#details1">
+            <i class="fas fa-book-open"></i> Category
+        </button>
+        <div id="details1" class="details-container collapse mt-3">
+            <p><div id="data-container1"></div></p>
+        </div>
+        <button class="btn btn-secondary" data-toggle="collapse" data-target="#details2">
+            <i class="fas fa-product-hunt"></i> Products
+        </button>
+        <div id="details2" class="details-container collapse mt-3">
+            <p><div id="data-container"></div></p>
+        </div>
+        <button class="btn btn-secondary" data-toggle="collapse" data-target="#details3">
+            <i class="fas fa-money-bill"></i> Serie Orders
+        </button>
+        <div id="details3" class="details-container collapse mt-3">
+            <p><div id="data-container2"></div></p>
+        </div>
     </div>
+
+    <!-- Informations détaillées (initialisées en tant que collapsibles) -->
+
     
-    <script src="ajaxCategoriesjs"></script>
-    <script src="ajaxProducts.js"></script>
-    <script src="ajaxOrders.js"></script>
+</div>
+
+<!-- Inclure les fichiers JavaScript de Bootstrap (jQuery inclus) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="ajaxCategoriesjs"></script>
+<script src="ajaxProducts.js"></script>
+<script src="ajaxOrders.js"></script>
+
 </body>
 </html>
